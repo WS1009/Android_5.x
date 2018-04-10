@@ -1,6 +1,5 @@
 package com.wangshun.test.adapter;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.SparseArray;

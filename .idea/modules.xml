@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AS_Space.iml" filepath="$PROJECT_DIR$/AS_Space.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sample_StickyNavLayout_Listview/Sample_StickyNavLayout_Listview.iml" filepath="$PROJECT_DIR$/Sample_StickyNavLayout_Listview/Sample_StickyNavLayout_Listview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StickyNavLayout/StickyNavLayout.iml" filepath="$PROJECT_DIR$/StickyNavLayout/StickyNavLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" />
     </modules>
   </component>
 </project>
