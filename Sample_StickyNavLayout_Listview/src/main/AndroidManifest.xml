@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.StickyNavLayout_listview" />
+        <activity android:name=".activity.MyNestedScrollActivity"></activity>
     </application>
 
 </manifest>

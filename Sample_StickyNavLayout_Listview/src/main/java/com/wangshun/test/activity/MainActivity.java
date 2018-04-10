@@ -1,89 +1,55 @@
 package com.wangshun.test.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.wangshun.test.R;
-import com.wangshun.test.fragment.TabFragment;
-import com.wangshun.test.view.SimpleViewPagerIndicator;
+import com.wangshun.test.adapter.CommonAdapter;
+import com.wangshun.test.adapter.ViewHolder;
 
-public class MainActivity extends FragmentActivity {
-    private String[] mTitles = new String[]{"简介", "评价", "相关"};
-    private SimpleViewPagerIndicator mIndicator;
-    private ViewPager mViewPager;
-    private FragmentPagerAdapter mAdapter;
-    private TabFragment[] mFragments = new TabFragment[mTitles.length];
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends Activity {
+
+    private ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initViews();
-        initDatas();
-        initEvents();
-    }
+        List<String> list = new ArrayList<String>();
+        list.add("StickyNavLayout_listview");
+        list.add("MyNestedScrollActivity");
 
-    private void initEvents() {
-        mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+
+        mListView = findViewById(R.id.lv_main);
+
+        mListView.setAdapter(new CommonAdapter<String>(MainActivity.this, list, R.layout.main_list) {
             @Override
-            public void onPageSelected(int position) {
-            }
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset,
-                                       int positionOffsetPixels) {
-                mIndicator.scroll(position, positionOffset);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
+            public void convert(ViewHolder helper, String item) {
+                helper.setText(R.id.tv, item);
             }
         });
 
-    }
-
-    private void initDatas() {
-        mIndicator.setTitles(mTitles);
-
-        for (int i = 0; i < mTitles.length; i++) {
-            mFragments[i] = (TabFragment) TabFragment.newInstance(mTitles[i]);
-        }
-
-        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public int getCount() {
-                return mTitles.length;
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        startActivity(new Intent(MainActivity.this, StickyNavLayout_listview.class));
+                        break;
+                    case 1:
+                        startActivity(new Intent(MainActivity.this, MyNestedScrollActivity.class));
+                        break;
+
+                }
             }
-
-            @Override
-            public Fragment getItem(int position) {
-                return mFragments[position];
-            }
-
-        };
-
-        mViewPager.setAdapter(mAdapter);
-        mViewPager.setCurrentItem(0);
+        });
     }
-
-    private void initViews() {
-        mIndicator = (SimpleViewPagerIndicator) findViewById(R.id.id_stickynavlayout_indicator);
-        mViewPager = (ViewPager) findViewById(R.id.id_stickynavlayout_viewpager);
-
-		/*
-		RelativeLayout ll = (RelativeLayout) findViewById(R.id.id_stickynavlayout_topview);
-		TextView tv = new TextView(this);
-		tv.setText("我的动态添加的");
-		tv.setBackgroundColor(0x77ff0000);
-		ll.addView(tv, new RelativeLayout.LayoutParams(
-				RelativeLayout.LayoutParams.MATCH_PARENT, 600));
-		*/
-    }
-
 }
