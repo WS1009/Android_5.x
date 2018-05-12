@@ -20,7 +20,7 @@ import java.util.List;
  * main
  */
 public class MainActivity extends AppCompatActivity
-{
+{--------------------------------
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas;
