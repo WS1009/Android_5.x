@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * add feature1
+ * main
  */
 public class MainActivity extends AppCompatActivity
-{///////////////////////////////////////////////////////
+{
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas;
