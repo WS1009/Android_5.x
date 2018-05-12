@@ -16,6 +16,9 @@ import com.ws.myrecyclerview.divider.DividerGridItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * add feature1
+ */
 public class MainActivity extends AppCompatActivity
 {
 
@@ -27,11 +30,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //test content
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-        // App Logo
+        // App Logo ----->1111111
         toolbar.setLogo(R.mipmap.ic_launcher);
         // Title
         toolbar.setTitle("App Title");
