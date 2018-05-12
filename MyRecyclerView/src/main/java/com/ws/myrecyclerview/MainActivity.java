@@ -20,7 +20,7 @@ import java.util.List;
  * add feature1
  */
 public class MainActivity extends AppCompatActivity
-{
+{///////////////////////////////////////////////////////
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
