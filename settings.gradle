@@ -1,1 +1,1 @@
-include ':Sample_StickyNavLayout_Listview', ':ViewPagerIndicator', ':StickyNavLayout'
+include ':Sample_StickyNavLayout_Listview', ':ViewPagerIndicator', ':StickyNavLayout', ':MyRecyclerView'

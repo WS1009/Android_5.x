@@ -117,9 +117,10 @@ public class ViewPagerIndicator extends LinearLayout {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         canvas.save();
-        // 画笔平移到正确的位置
+        //画布平移到正确的位置
         canvas.translate(mInitTranslationX + mTranslationX, getHeight() + 1);
         canvas.drawPath(mPath, mPaint);
+        //画布返回之前保存的位置
         canvas.restore();
 
         super.dispatchDraw(canvas);
@@ -127,6 +128,7 @@ public class ViewPagerIndicator extends LinearLayout {
 
     /**
      * 初始化三角形的宽度
+     * 在控件大小发生改变时调用。所以这里初始化会被调用一次
      */
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -157,6 +159,7 @@ public class ViewPagerIndicator extends LinearLayout {
 
     /**
      * 设置布局中view的一些必要属性；如果设置了setTabTitles，布局中view则无效
+     * 当View中所有的子控件均被映射成xml后触发
      */
     @Override
     protected void onFinishInflate() {
@@ -199,7 +202,6 @@ public class ViewPagerIndicator extends LinearLayout {
 
     /**
      * 获得屏幕的宽度
-     *
      * @return
      */
     public int getScreenWidth() {

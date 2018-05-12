@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.wangshun.test.R;
 import com.wangshun.test.adapter.CommonAdapter;
 import com.wangshun.test.adapter.ViewHolder;
+import com.wangshun.test.test.MyNestedScrollTestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,8 @@ public class MainActivity extends Activity {
         List<String> list = new ArrayList<String>();
         list.add("StickyNavLayout_listview");
         list.add("MyNestedScrollActivity");
+        list.add("CustomTitleViewActivity");
+        list.add("MyNestedScrollTestActivity");
 
 
         mListView = findViewById(R.id.lv_main);
@@ -46,6 +49,12 @@ public class MainActivity extends Activity {
                         break;
                     case 1:
                         startActivity(new Intent(MainActivity.this, MyNestedScrollActivity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(MainActivity.this, CustomTitleViewActivity.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(MainActivity.this, MyNestedScrollTestActivity.class));
                         break;
 
                 }

@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/MyRecyclerView" />
             <option value="$PROJECT_DIR$/Sample_StickyNavLayout_Listview" />
             <option value="$PROJECT_DIR$/StickyNavLayout" />
             <option value="$PROJECT_DIR$/ViewPagerIndicator" />
