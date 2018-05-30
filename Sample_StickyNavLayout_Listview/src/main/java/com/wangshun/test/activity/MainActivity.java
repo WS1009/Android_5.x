@@ -34,6 +34,7 @@ public class MainActivity extends Activity
         list.add("MyNestedScrollTestActivity");
         list.add("SimpleDraweeViewActivity");
         list.add("RecyclerViewActivity");
+        list.add("StateViewActivity");
 
 
         mListView = findViewById(R.id.lv_main);
@@ -70,6 +71,9 @@ public class MainActivity extends Activity
                         break;
                     case 5:
                         startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+                        break;
+                    case 6:
+                        startActivity(new Intent(MainActivity.this, StateViewActivity.class));
                         break;
 
                 }

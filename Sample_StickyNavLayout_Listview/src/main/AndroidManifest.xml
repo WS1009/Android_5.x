@@ -24,7 +24,8 @@
         <activity android:name=".activity.CustomTitleViewActivity" />
         <activity android:name=".test.MyNestedScrollTestActivity" />
         <activity android:name=".activity.SimpleDraweeViewActivity" />
-        <activity android:name=".activity.RecyclerViewActivity"></activity>
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.StateViewActivity" android:theme="@style/TranslucentTheme"></activity>
     </application>
 
 </manifest>
