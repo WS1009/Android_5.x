@@ -32,6 +32,7 @@ public class TabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_tab, container, false);
         mRecyclerView = (RecyclerView) view
                 .findViewById(R.id.id_stickynavlayout_innerscrollview);

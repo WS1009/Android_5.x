@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--冷启动1-->
+    <style name="AppWelcome" parent="android:Theme.Translucent.NoTitleBar.Fullscreen">
+
+    </style>
+
+    <!--冷启动2-->
+    <style name="AppWelcome1" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/bg</item>
+    </style>
+
 </resources>

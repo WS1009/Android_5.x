@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * add ws2 
+ * add ws2
  */
 public class MainActivity extends AppCompatActivity
 {
