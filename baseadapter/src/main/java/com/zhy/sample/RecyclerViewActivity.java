@@ -1,9 +1,8 @@
-package com.wangshun.test.activity;
+package com.zhy.sample;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,17 +14,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wangshun.test.R;
-import com.wangshun.test.recyclerview.adapter.CommonAdapter;
-import com.wangshun.test.recyclerview.base.ViewHolder;
-import com.wangshun.test.recyclerview.wrapper.EmptyWrapper;
-import com.wangshun.test.recyclerview.wrapper.HeaderAndFooterWrapper;
-import com.wangshun.test.recyclerview.wrapper.LoadmoreWrapper;
+import com.zhy.sample.adapter.recyclerview.CommonAdapter;
+import com.zhy.sample.adapter.recyclerview.base.ViewHolder;
+import com.zhy.sample.adapter.recyclerview.wrapper.EmptyWrapper;
+import com.zhy.sample.adapter.recyclerview.wrapper.HeaderAndFooterWrapper;
+import com.zhy.sample.adapter.recyclerview.wrapper.LoadMoreWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends Activity
+public class RecyclerViewActivity extends AppCompatActivity
 {
 
     private RecyclerView mRecyclerView;
@@ -33,13 +31,12 @@ public class RecyclerViewActivity extends Activity
     private CommonAdapter<String> mAdapter;
     private HeaderAndFooterWrapper mHeaderAndFooterWrapper;
     private EmptyWrapper mEmptyWrapper;
-    private LoadmoreWrapper mLoadMoreWrapper;
+    private LoadMoreWrapper mLoadMoreWrapper;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
 
@@ -50,7 +47,7 @@ public class RecyclerViewActivity extends Activity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 //        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, com.wangshun.test.recyclerview.DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
         mAdapter = new CommonAdapter<String>(this, R.layout.item_list, mDatas)
         {
@@ -61,14 +58,13 @@ public class RecyclerViewActivity extends Activity
             }
         };
 
-
         initHeaderAndFooter();
 
 //        initEmptyView();
 
-        mLoadMoreWrapper = new LoadmoreWrapper(mHeaderAndFooterWrapper);
+        mLoadMoreWrapper = new LoadMoreWrapper(mHeaderAndFooterWrapper);
         mLoadMoreWrapper.setLoadMoreView(R.layout.default_loading);
-        mLoadMoreWrapper.setOnLoadMoreListener(new LoadmoreWrapper.OnLoadMoreListener()
+        mLoadMoreWrapper.setOnLoadMoreListener(new LoadMoreWrapper.OnLoadMoreListener()
         {
             @Override
             public void onLoadMoreRequested()
@@ -78,7 +74,8 @@ public class RecyclerViewActivity extends Activity
                     @Override
                     public void run()
                     {
-                        for (int i = 0; i < 10; i++) {
+                        for (int i = 0; i < 10; i++)
+                        {
                             mDatas.add("Add:" + i);
                         }
                         mLoadMoreWrapper.notifyDataSetChanged();
@@ -92,7 +89,7 @@ public class RecyclerViewActivity extends Activity
         mAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener()
         {
             @Override
-            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position)
+            public void onItemClick(View view, RecyclerView.ViewHolder holder,  int position)
             {
                 Toast.makeText(RecyclerViewActivity.this, "pos = " + position, Toast.LENGTH_SHORT).show();
                 mAdapter.notifyItemRemoved(position);
@@ -126,7 +123,8 @@ public class RecyclerViewActivity extends Activity
 
     private void initDatas()
     {
-        for (int i = 'A'; i <= 'z'; i++) {
+        for (int i = 'A'; i <= 'z'; i++)
+        {
             mDatas.add((char) i + "");
         }
     }
@@ -148,7 +146,8 @@ public class RecyclerViewActivity extends Activity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        switch (id) {
+        switch (id)
+        {
             case R.id.action_linear:
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
                 break;

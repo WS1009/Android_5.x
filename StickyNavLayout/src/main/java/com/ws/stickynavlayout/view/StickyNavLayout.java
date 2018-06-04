@@ -43,8 +43,7 @@ public class StickyNavLayout extends LinearLayout implements NestedScrollingPare
         mScroller = new OverScroller(context);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         mMaximumVelocity = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
-        mMinimumVelocity = ViewConfiguration.get(context)
-                .getScaledMinimumFlingVelocity();
+        mMinimumVelocity = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
 
     }
 

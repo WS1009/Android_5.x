@@ -35,6 +35,7 @@ public class MainActivity extends Activity
         list.add("SimpleDraweeViewActivity");
         list.add("RecyclerViewActivity");
         list.add("StateViewActivity");
+        list.add("MutilItemRecyclerViewActivity");
 
 
         mListView = findViewById(R.id.lv_main);
@@ -75,6 +76,7 @@ public class MainActivity extends Activity
                     case 6:
                         startActivity(new Intent(MainActivity.this, StateViewActivity.class));
                         break;
+
 
                 }
             }

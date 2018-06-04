@@ -12,6 +12,7 @@ public class StateViewActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state_view);
     }

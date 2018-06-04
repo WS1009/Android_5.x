@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Sample_StickyNavLayout_Listview/Sample_StickyNavLayout_Listview.iml" filepath="$PROJECT_DIR$/Sample_StickyNavLayout_Listview/Sample_StickyNavLayout_Listview.iml" />
       <module fileurl="file://$PROJECT_DIR$/StickyNavLayout/StickyNavLayout.iml" filepath="$PROJECT_DIR$/StickyNavLayout/StickyNavLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseadapter/baseadapter.iml" filepath="$PROJECT_DIR$/baseadapter/baseadapter.iml" />
     </modules>
   </component>
 </project>
